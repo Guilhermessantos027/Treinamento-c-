@@ -8,13 +8,17 @@ public class HelloWorld {
        Humano Guilherme=new Humano();
         Humano Gabriel=new Humano();
         Comida Sucrilhos=new Comida();
+        Sucrilhos.NomearComida("Sucrilhos");
         Comida pao=new Comida();
-        Sucrilhos.aumentarVida(10);
-        pao.aumentarVida(5);
+        pao.NomearComida("pao");
+        Sucrilhos.DarValorComida(10);
+        pao.DarValorComida(5);
         Guilherme.Falar();
-            Guilherme.Comer(Sucrilhos.(10));
-        Guilherme.Andar(null,5);
-        Gabriel.Andar(20)
+        Guilherme.Comer(Sucrilhos.RetornarValorComida());
+        Guilherme.Andar(5,2);
+        Gabriel.Andar(20,3);
+         Guilherme.Falar();
+        Guilherme.Comer(pao.RetornarValorComida());
     }
 }
 
@@ -25,11 +29,11 @@ public class Humano{
         vida-=dano;
 
     }
-    private void Falar(){
-        console.WriteLine ("Tenho "+fome +"de fome"+"tenho" +vida +"de vida");
+    public void Falar(){
+        Console.WriteLine ("Tenho "+fome +" de fome"+" tenho " +vida +" de vida");
         
     }
-    private void Andar(int metros,int km){
+    public void Andar(int metros,int km){
         if(metros!=null){
               fome=metros-fome;
         } else{
@@ -37,7 +41,7 @@ public class Humano{
         }
         
     }
-    private void Comer (int comida){
+    public void Comer (int comida){
         
         fome= fome+comida;
     }
